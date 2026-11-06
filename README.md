@@ -68,6 +68,21 @@ img-convert logo.png --to jpeg --background '#ffffff'
 
 Without `--background '#RRGGBB'`, that conversion is rejected so transparency is never discarded unexpectedly.
 
+### Website favicons
+
+`--to favicon` turns an image into the favicon set a website needs, written to a `<name>-favicon/` folder:
+
+```bash
+img-convert logo.png --to favicon                 # writes logo-favicon/
+img-convert logo.png --to favicon -o public       # writes public/logo-favicon/
+```
+
+The folder holds `favicon.ico` (16, 32 and 48 px), `favicon-16x16.png`, `favicon-32x32.png`, `apple-touch-icon.png`
+(180 px), `android-chrome-192x192.png`, `android-chrome-512x512.png` and `site.webmanifest`. Copy them to the site
+root and add the `<link>` tags the command prints to `<head>`; fill in `name` and `short_name` in the manifest.
+
+Use a square image of at least 512 px for sharp results. A non-square image is centered on a transparent square.
+
 ### Existing files and replacing originals
 
 Existing outputs are skipped by default. Use `--overwrite` only when replacing that output is intended:

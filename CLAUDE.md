@@ -5,5 +5,6 @@ CLI that bulk-converts raster images (JPEG, PNG, WebP, BMP, TIFF, GIF, ICO) with
 
 - Setup / install: `uv tool install --force --editable .` (editable, so code changes apply to the global `img-convert`).
 - Run without installing: `uv run img-convert <inputs> --to webp`.
-- No tests, lint or CI yet. No deploy: it's a local tool.
-- Git: default branch `master`, `origin` is `dsfiguer/img-convert` (public). Branch + PR for changes.
+- Tests: `uv run --with pytest python -m pytest -q tests`. No lint or CI. No deploy: it's a local tool.
+- Git: default branch `master`, `origin` is `dsfiguer/img-convert` (public). No pull requests: commit on a short branch, fast-forward `master`, push. "Commit", "merge" or "push" each
+  mean all three.
